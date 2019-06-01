@@ -1,9 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -14,8 +12,8 @@ public class DataReader {
 	private JSONParser parser=new JSONParser();
 	
 	public DataReader(String address) {
-		super();
 		this.address = address;
+		
 		try {
 			ar = (JSONArray) parser.parse(new FileReader(address));
 			
@@ -35,15 +33,5 @@ public class DataReader {
 	public JSONArray getAr() {
 		return ar;
 	}
-	
-    //testing
-	public void printAr() {
-
-	    for (Object c : ar)
-	    {
-	      System.out.println(c+"");
-	    }
-	}
-
 }
 
